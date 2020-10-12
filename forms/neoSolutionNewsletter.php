@@ -15,8 +15,8 @@ try {
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
     $mail->Username = "giftmywish@gmail.com";                 // SMTP username
     $mail->Password = "Mel@1386";                           // SMTP password
-    $mail->SMTPSecure = 'tls';                           // Enable TLS encryption, `ssl` also accepted
-    $mail->Port = 587;                                    // TCP port to connect to
+    $mail->SMTPSecure = 'ssl';                           // Enable TLS encryption, `ssl` also accepted
+    $mail->Port = 465;                                    // TCP port to connect to
     $mail->SMTPOptions = array(
     'ssl' => array(
        'verify_peer' => false,
