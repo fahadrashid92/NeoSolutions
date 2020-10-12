@@ -25,8 +25,8 @@ try {
        )
     );
     //Recipients
-    $mail->setFrom('fahad@giftmywishes.com');
-    $mail->addAddress('fahad@giftmywishes.com');     // Add a recipient
+    $mail->setFrom('giftmywish@gmail.com');
+    $mail->addAddress('giftmywish@gmail.com');     // Add a recipient
 
 
     //Content
