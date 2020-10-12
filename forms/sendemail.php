@@ -13,6 +13,7 @@
         $mail->Host = "gmail.com"; // Your Domain Name
           
         $mail->SMTPAuth = true;
+        $mail->SMTPSecure = “tls”;
         $mail->Port = 587;
         $mail->Username = "giftmywish@gmail.com"; // Your Email ID
         $mail->Password = "Mel@1386"; // Password of your email id
