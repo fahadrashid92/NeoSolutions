@@ -11,11 +11,11 @@ try {
     //Server settings
     $mail->SMTPDebug = 0;                                 // Enable verbose debug output
     $mail->isSMTP();                                      // Set mailer to use SMTP
-    $mail->Host = gethostbyname('smtp.gmail.com');  // Specify main and backup SMTP servers
+    $mail->Host = gethostbyname('smtp.giftmywishes.com');  // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail->Username = "giftmywish@gmail.com";                 // SMTP username
-    $mail->Password = "Mel@1386";                           // SMTP password
-    $mail->SMTPSecure = 'ssl';                           // Enable TLS encryption, `ssl` also accepted
+    $mail->Username = "fahad@giftmywishes.com";                 // SMTP username
+    $mail->Password = "Fahad@123";                           // SMTP password
+    $mail->SMTPSecure = 'tls';                           // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 465;                                    // TCP port to connect to
     $mail->SMTPOptions = array(
     'ssl' => array(
@@ -25,8 +25,8 @@ try {
        )
     );
     //Recipients
-    $mail->setFrom('giftmywish@gmail.com');
-    $mail->addAddress('giftmywish@gmail.com');     // Add a recipient
+    $mail->setFrom('fahad@giftmywishes.com');
+    $mail->addAddress('fahad@giftmywishes.com');     // Add a recipient
 
 
     //Content
