@@ -22,7 +22,13 @@
         $mail->FromName = "Neo Solutions Team";
         $mail->AddAddress ("giftmywish@gmail.com"); // On which email id you want to get the message
         $mail->AddCC ($email);
-          
+          $mail->SMTPOptions = array(
+    'ssl' => array(
+       'verify_peer' => false,
+       'verify_peer_name' => false,
+       'allow_self_signed' => true
+       )
+    );
         $mail->IsHTML(true);
           
         $mail->Subject = "Enquiry from Website submitted by $name"; // This is your subject
