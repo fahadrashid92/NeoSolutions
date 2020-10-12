@@ -1003,7 +1003,11 @@ to improve software development practices in the areas of Microservices, DevOps,
                 <div class="error-message"></div>
                 <div class="sent-message"></div>
               </div>
-              <input type="email" name="email"><button type="submit" value="Subscribe">Subscribe</button>
+              <div class="form-group">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                  <div class="validate"></div>
+                </div>
+              <button type="submit" value="Subscribe">Subscribe</button>
             </form>
             
 
