@@ -1,8 +1,7 @@
 <?php
   
-    require ("https://neosolutions.herokuapp.com/index.html/forms/class.phpmailer.php");
-  
-    if(isset($_POST['submit'])){
+    require ("class.phpmailer.php");
+ 
         $name=$_POST['name']; // Get Name value from HTML Form
         $email=$_POST['email'];  // Get Email Value
         $message=$_POST['message']; // Get Message Value
@@ -67,5 +66,5 @@
             </script>";
         }
   
-    }
+    
 ?>
