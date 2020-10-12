@@ -998,10 +998,13 @@ to improve software development practices in the areas of Microservices, DevOps,
           <div class="col-lg-4 col-md-6 footer-newsletter">
             <h4>Our Newsletter</h4>
             <p>Subscribe to our Newsletter.</p>
-            <form action="forms/neoSolutionNewsletter.php" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-              <div class="error-message"></div>
+            <form action="forms/neoSolutionNewsletter.php" method="post" role="form" class="php-email-form">
+              <input type="email" name="email"><button type="submit" value="Subscribe" />
+              <div class="mb-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
             </form>
 
           </div>
