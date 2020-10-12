@@ -1,15 +1,54 @@
-<?php 
-header('Access-Control-Allow-Origin: *');
+<?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-header('Access-Control-Allow-Methods: POST');
+require 'Exception.php';
+require 'PHPMailer.php';
+require 'SMTP.php';
+$email=$_POST['email'];  // Get Email Value
+$mail = new PHPMailer(true);                              // Passing `true` enables exceptions
+try {
+    //Server settings
+    $mail->SMTPDebug = 0;                                 // Enable verbose debug output
+    $mail->isSMTP();                                      // Set mailer to use SMTP
+    $mail->Host = gethostbyname('smtp.gmail.com');  // Specify main and backup SMTP servers
+    $mail->SMTPAuth = true;                               // Enable SMTP authentication
+    $mail->Username = "giftmywish@gmail.com";                 // SMTP username
+    $mail->Password = "Mel@1386";                           // SMTP password
+    $mail->SMTPSecure = 'tls';                           // Enable TLS encryption, `ssl` also accepted
+    $mail->Port = 587;                                    // TCP port to connect to
+    $mail->SMTPOptions = array(
+    'ssl' => array(
+       'verify_peer' => false,
+       'verify_peer_name' => false,
+       'allow_self_signed' => true
+       )
+    );
+    //Recipients
+    $mail->setFrom('giftmywish@gmail.com');
+    $mail->addAddress('giftmywish@gmail.com');     // Add a recipient
 
-header('Access-Control-Allow-Headers: X-Requested-With');
-$email = $_POST['email'];
-$formcontent=" Neo Solutions \n Newsletter Subscription Form: \n Email: $email";
-$recipient = "giftmywish@gmail.com";
-$subject = "Newsletter Subscription";
-$mailheader = "From: $email \r\n";
 
-mail($recipient, $subject, $formcontent, $mailheader) or die("Error");
-echo "Your message has been sent. Thank you!";
+    //Content
+    $mail->isHTML(true);                                  // Set email format to HTML
+    $mail->Subject = 'Newsletter subscription from NeoSolutions submitted';
+    $mail->Body    = "<html>
+    <body>
+        <table style='width:600px;'>
+            <tbody>
+                <tr>
+                    <td style='width:150px'><strong>Email ID: </strong></td>
+                    <td style='width:400px'>$email</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>";
+
+    $mail->send();
+    echo 'Message has been sent';
+} catch (Exception $e) {
+    echo 'Message could not be sent.';
+    echo 'Mailer Error: ' . $mail->ErrorInfo;
+}
 ?>
