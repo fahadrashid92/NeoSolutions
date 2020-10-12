@@ -34,7 +34,7 @@ try {
 
     //Content
     $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = 'Enquiry from Website submitted';
+    $mail->Subject = 'Enquiry from NeoSolutions submitted';
     $mail->Body    = "<html>
     <body>
         <table style='width:600px;'>
