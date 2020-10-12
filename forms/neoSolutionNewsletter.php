@@ -16,7 +16,7 @@ try {
     $mail->Username = "fahad@giftmywishes.com";                 // SMTP username
     $mail->Password = "Fahad@123";                           // SMTP password
     $mail->SMTPSecure = 'tls';                           // Enable TLS encryption, `ssl` also accepted
-    $mail->Port = 465;                                    // TCP port to connect to
+    $mail->Port = 587;                                    // TCP port to connect to
     $mail->SMTPOptions = array(
     'ssl' => array(
        'verify_peer' => false,
