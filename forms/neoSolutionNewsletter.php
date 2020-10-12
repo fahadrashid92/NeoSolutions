@@ -46,12 +46,9 @@ try {
 </html>";
 
     $mail->send();
-    echo "<script>
-                alert('Email has been sent successfully.');
-            </script>";
+    echo 'Message has been sent';
 } catch (Exception $e) {
-    echo "<script>
-                alert('Submission failed.');
-            </script>";
+    echo 'Message could not be sent.';
+    echo 'Mailer Error: ' . $mail->ErrorInfo;
 }
 ?>
