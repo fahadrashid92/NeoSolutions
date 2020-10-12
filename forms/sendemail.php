@@ -1,6 +1,6 @@
 <?php
   
-    require ("class.phpmailer.php");
+    require ("https://neosolutions.herokuapp.com/index.html/forms/class.phpmailer.php");
   
     if(isset($_POST['submit'])){
         $name=$_POST['name']; // Get Name value from HTML Form
