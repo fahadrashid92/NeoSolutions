@@ -1,6 +1,6 @@
 <?php
   
-    require ("class.phpmailer.php");
+    require ("../forms/class.phpmailer.php");
  
         $name=$_POST['name']; // Get Name value from HTML Form
         $email=$_POST['email'];  // Get Email Value
