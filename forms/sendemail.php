@@ -8,6 +8,7 @@ require 'SMTP.php';
 $name=$_POST['name']; // Get Name value from HTML Form
 $email=$_POST['email'];  // Get Email Value
 $message=$_POST['message'];
+$subject=$_POST['subject'];
 $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
 try {
     //Server settings
@@ -41,6 +42,10 @@ try {
                 <tr>
                     <td style='width:150px'><strong>Name: </strong></td>
                     <td style='width:400px'>$name</td>
+                </tr>
+                <tr>
+                    <td style='width:150px'><strong>Subject: </strong></td>
+                    <td style='width:400px'>$subject</td>
                 </tr>
                 <tr>
                     <td style='width:150px'><strong>Email ID: </strong></td>
